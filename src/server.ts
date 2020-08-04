@@ -1,8 +1,12 @@
 import express from 'express';
+import routes from './routes';
 
 const app = express();
 
 app.use(express.json());
+app.use(routes);
+app.listen(3333);
+
 
 //GET : Buscar ou listar uma informação
 // POST: Criar alguma nova informação
@@ -12,11 +16,3 @@ app.use(express.json());
 // Corpo (Request Body): dados para criação ou atualização de um registro 
 // Route Params: Identificar qual recurso em quero atualizar ou deletar
 // Query Params: Paginação, filtros, ordenação 
-
-app.get('/', (request, response)=>{
-    return response.json({message: "Hello World"}
-);
-
-})
-
-app.listen(3333);
